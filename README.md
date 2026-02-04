@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# New Booking Entry – Logistics ERP Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **New Booking Entry screen** for a Logistics ERP system. It is designed for office administrators to quickly and accurately enter shipment details.
 
-Currently, two official plugins are available:
+The focus of this implementation is:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Data-dense ERP UI
+* Keyboard-friendly form interactions
+* Clean component reusability
+* Type-safe React code
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Tech Stack
 
-## Expanding the ESLint configuration
+* **React**
+* **TypeScript**
+* **Tailwind CSS**
+* **Vite** (for fast development)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+##  Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Structured form with 3 sections:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  * Sender Details
+  * Receiver Details
+  * Package Details
+* Responsive ERP layout:
+
+  * Desktop: Sender & Receiver side-by-side
+  * Mobile: Stacked layout
+* Auto-calculation of Total Shipping Cost (`weight × rate`)
+* Inline validation with error messages
+* Submit button appears only when required fields are filled
+* Reusable components (`FormInput`, `FormTextArea`, `SectionWrapper`)
+* Type-safe event handling
+
+---
+
+##  Project Structure
+
+```
+src/
+ ├─ components/
+ │   ├─ FormInput.tsx
+ │   ├─ FormTextArea.tsx
+ │   └─ SectionWrapper.tsx
+ ├─ pages/
+ │   └─ NewBooking.tsx
+ ├─ App.tsx
+ └─ main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+##  Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1️ Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd <project-folder>
 ```
+
+###  Install dependencies
+
+```bash
+npm install
+```
+
